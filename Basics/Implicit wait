@@ -1,0 +1,19 @@
+package Basics_01;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Implicit_wait {
+	public static void main(String []args) {
+		
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //define implicit wait Implicit Wait in Selenium is a mechanism to instruct the WebDriver to wait for a certain amount of time before throwing a No Such Element Exception.
+
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); // launch url 
+		driver.manage().window().maximize(); // to maximize the launched web page 
+		driver.findElement(By.xpath("//input[@placeholder = 'Username']")).sendKeys("Admin"); // send data to the selected field 
+		}
+
+}
