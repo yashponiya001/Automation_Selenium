@@ -1,0 +1,20 @@
+package Basics_01;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Basics_test_01 {
+	public static void main(String []args) {
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://demo.opencart.com/");
+		driver.manage().window().maximize(); 
+		String act_title = driver.getTitle();
+		if(act_title.equals("Your Stoe")) {
+			System.out.println("Test pass");
+		}
+		else System.out.println("Test failed");
+		
+		driver.close();
+	}
+
+}
